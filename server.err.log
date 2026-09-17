@@ -1,0 +1,9 @@
+127.0.0.1 - - [15/May/2026 21:52:26] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [15/May/2026 21:52:26] "GET /assets/story-couple-original.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [15/May/2026 21:52:26] "GET /assets/cuvantare.png HTTP/1.1" 200 -
+127.0.0.1 - - [15/May/2026 21:52:27] "GET /assets/banchet-new.png HTTP/1.1" 200 -
+127.0.0.1 - - [15/May/2026 21:52:27] "GET /assets/moderator-icon.png HTTP/1.1" 200 -
+127.0.0.1 - - [15/May/2026 21:52:27] "GET /header.jpeg HTTP/1.1" 200 -
+127.0.0.1 - - [15/May/2026 21:52:44] "GET /assets/hero-mobile.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [15/May/2026 21:52:44] "GET /index.html HTTP/1.1" 304 -
+127.0.0.1 - - [15/May/2026 21:53:00] "GET /index.html HTTP/1.1" 304 -

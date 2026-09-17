@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marius & Sultana — Invitație Nuntă</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Merienda:wght@300..900&family=Whisper&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #faf7f4;
+    --ivory: #f5f0ea;
+    --blush: #e8c4c0;
+    --rose: #c9908a;
+    --mauve: #9e6b6b;
+    --charcoal: #2a2a2a;
+    --warm-gray: #7a7170;
+    --gold: #c9a96e;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--cream); }
+  ::-webkit-scrollbar-thumb { background: var(--blush); border-radius: 2px; }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #1a1614;
+    overflow: hidden;
+    padding: 60px 24px;
+  }
+
+  .mesaj {
+    max-width: 760px;
+    margin: 18px auto 0;
+    padding: 18px 32px 0;
+    text-align: center;
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem;
+    line-height: 1.78;
+    color: var(--warm-gray);
+    font-style: italic;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    background-image: url('header.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.75;
+    filter: grayscale(55%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(26,22,20,0.4) 0%, rgba(26,22,20,0.7) 60%, rgba(26,22,20,0.95) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    animation: fadeUp 1.2s ease both;
+  }
+
+  .hero-script {
+    font-family: 'Whisper', cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(3.5rem, 10vw, 6rem);
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+  }
+
+  .hero-line { display: block; }
+
+  .hero-ampersand {
+    color: var(--blush);
+    display: block;
+    font-size: 0.82em;
+    line-height: 0.55;
+    margin: -2px 0 4px;
+  }
+
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    margin: 24px 0;
+  }
+
+  .hero-divider-line {
+    width: 80px;
+    height: 1px;
+    background: rgba(255,255,255,0.4);
+  }
+
+  .hero-divider-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--blush);
+    transform: rotate(45deg);
+  }
+
+  .hero-date {
+    font-family: 'Merienda', cursive;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.5);
+    font-family: 'Merienda', cursive;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.3);
+  }
+
+  .section-label {
+    font-family: 'Whisper', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.6rem;
+    color: var(--mauve);
+    display: block;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .section-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .section-line::before,
+  .section-line::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--blush);
+  }
+
+  .section-diamond {
+    width: 5px;
+    height: 5px;
+    background: var(--blush);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .message-section {
+    text-align: center;
+    background: var(--ivory);
+    border-radius: 2px;
+    padding: 60px 32px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .message-section .section-label { font-size: 3rem; }
+
+  .message-section p {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--warm-gray);
+    font-style: italic;
+    margin-bottom: 28px;
+  }
+
+  .story-section {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 92px 24px;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.88fr) minmax(320px, 1.12fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  .story-photo {
+    width: 100%;
+    max-width: 360px;
+    min-height: 380px;
+    justify-self: center;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.09);
+  }
+
+  .story-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .story-copy {
+    max-width: 500px;
+    text-align: center;
+    justify-self: center;
+  }
+
+  .story-copy p {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.36rem;
+    font-style: italic;
+    line-height: 1.82;
+    color: var(--warm-gray);
+    margin-bottom: 20px;
+  }
+
+  .story-accent-image {
+    width: 100%;
+    max-width: 240px;
+    margin: 10px auto 0;
+    display: block;
+    opacity: 0.9;
+  }
+
+  .save-date-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 24px 72px;
+    text-align: center;
+  }
+
+  .save-date-label {
+    display: block;
+    font-family: 'Merienda', cursive;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 18px;
+  }
+
+  .save-date-value {
+    font-family: 'Crimson Text', serif;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    color: var(--charcoal);
+    letter-spacing: 0.08em;
+  }
+
+  .countdown-section {
+    text-align: center;
+    padding: 60px 24px;
+    background: var(--charcoal);
+    color: #fff;
+  }
+
+  .countdown-label {
+    font-family: 'Merienda', cursive;
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 28px;
+  }
+
+  .countdown-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 72px;
+  }
+
+  .countdown-num {
+    font-family: 'Crimson Text', serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: #fff;
+  }
+
+  .countdown-unit {
+    font-family: 'Merienda', cursive;
+    font-weight: 400;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--blush);
+    margin-top: 6px;
+  }
+
+  .countdown-sep {
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--blush);
+    line-height: 1.1;
+    padding: 0 2px;
+  }
+
+  .program-section {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 104px 32px 88px;
+    background: transparent;
+  }
+
+  .program-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 56px;
+    margin-top: 28px;
+  }
+
+  .program-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 12px 24px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .program-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .program-visual {
+    width: 160px;
+    height: 132px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  .program-visual img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+
+  .program-item--civil .program-visual img {
+    width: 114px;
+    height: 114px;
+  }
+
+  .program-item--banquet .program-visual img {
+    width: 112px;
+    height: 112px;
+  }
+
+  .program-item--moderator {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 360px;
+  }
+
+  .program-item--moderator .program-visual {
+    display: none;
+  }
+
+  .program-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .program-title {
+    font-family: 'Whisper', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    color: rgba(98, 89, 88, 0.78);
+    line-height: 0.95;
+    margin-bottom: 18px;
+  }
+
+  .program-time {
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 2.05rem;
+    color: rgba(74, 67, 66, 0.86);
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+  }
+
+  .program-place {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.24rem;
+    font-style: italic;
+    line-height: 1.72;
+    color: rgba(92, 84, 83, 0.8);
+    min-height: 0;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .program-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .program-action,
+  .moderator-contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    padding: 13px 28px;
+    border: 1px solid rgba(144, 132, 129, 0.45);
+    border-radius: 999px;
+    color: rgba(93, 86, 85, 0.86);
+    text-decoration: none;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.08rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    background: transparent;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .program-action:hover,
+  .moderator-contact:hover {
+    background: rgba(93, 86, 85, 0.9);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .zoom-modal[hidden],
+  .moderator-modal[hidden] {
+    display: none;
+  }
+
+  .zoom-modal,
+  .moderator-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(24, 20, 18, 0.65);
+  }
+
+  .zoom-modal-card,
+  .moderator-modal-card {
+    position: relative;
+    width: min(100%, 420px);
+    padding: 32px 28px 28px;
+    border-radius: 20px;
+    background: #fffaf7;
+    box-shadow: 0 24px 60px rgba(42, 42, 42, 0.18);
+    text-align: center;
+  }
+
+  .zoom-modal-close,
+  .moderator-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(42, 42, 42, 0.08);
+    color: var(--charcoal);
+    font-family: 'Crimson Text', serif;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .zoom-modal-title,
+  .moderator-modal-title {
+    font-family: 'Whisper', cursive;
+    font-weight: 400;
+    font-size: 2.2rem;
+    color: var(--mauve);
+    margin-bottom: 10px;
+  }
+
+  .zoom-modal-text,
+  .moderator-modal-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.75;
+    color: var(--warm-gray);
+    margin-bottom: 14px;
+  }
+
+  .zoom-modal-value {
+    display: block;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+  }
+
+  .moderator-modal-phone,
+  .zoom-modal-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(122, 113, 112, 0.35);
+    color: var(--charcoal);
+    text-decoration: none;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  .rsvp-section {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .rsvp-deadline {
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--warm-gray);
+    margin-bottom: 32px;
+    line-height: 1.8;
+  }
+
+  .rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: left;
+  }
+
+  .rsvp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .rsvp-field label {
+    font-family: 'Merienda', cursive;
+    font-weight: 500;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  .rsvp-field input,
+  .rsvp-field select,
+  .rsvp-field textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: transparent;
+    border: 1px solid var(--blush);
+    border-radius: 2px;
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+  }
+
+  .rsvp-field input:focus,
+  .rsvp-field select:focus,
+  .rsvp-field textarea:focus {
+    border-color: var(--mauve);
+  }
+
+  .rsvp-field textarea { resize: none; height: 80px; }
+
+  .rsvp-choice-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .rsvp-choice {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 18px;
+    border: 1px solid var(--blush);
+    background: transparent;
+    color: var(--charcoal);
+    font-family: 'Merienda', cursive;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  }
+
+  .rsvp-choice.active {
+    background: var(--charcoal);
+    border-color: var(--charcoal);
+    color: #fff;
+  }
+
+  .rsvp-choice:hover { transform: translateY(-2px); }
+
+  .rsvp-status-note {
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem;
+    color: var(--warm-gray);
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .rsvp-submit {
+    margin-top: 10px;
+    width: 100%;
+    padding: 16px;
+    background: var(--charcoal);
+    color: #fff;
+    font-family: 'Merienda', cursive;
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .rsvp-submit:hover { background: var(--mauve); transform: translateY(-2px); }
+
+  .footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 48px 24px;
+  }
+
+  .footer-script {
+    font-family: 'Whisper', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: rgba(255,255,255,0.8);
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .footer-contact {
+    font-family: 'Merienda', cursive;
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  .floral {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--blush);
+    letter-spacing: 0.3em;
+    margin: 8px 0;
+    opacity: 0.7;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 480px) {
+    .countdown-num { font-size: 2.6rem; }
+    .countdown-item { min-width: 56px; }
+    .hero-photo {
+      background-image: url('assets/hero-mobile.jpg');
+      background-position: 35% center;
+      opacity: 0.75;
+    }
+    .hero-ampersand { margin: -6px 0 0; }
+    .story-section { grid-template-columns: 1fr; gap: 24px; padding: 80px 20px 56px; }
+    .story-photo { max-width: 300px; min-height: 300px; }
+    .story-copy p { font-size: 1.22rem; line-height: 1.72; }
+    .save-date-section { padding: 12px 20px 64px; }
+    .program-section { padding: 84px 20px 72px; }
+    .program-list { gap: 18px; }
+    .program-item { padding-inline: 2px; }
+    .program-visual { width: 92px; height: 82px; margin-bottom: 10px; }
+    .program-item--civil .program-visual img,
+    .program-item--banquet .program-visual img { width: 68px; height: 68px; }
+    .program-title { font-size: 1.95rem; }
+    .program-time { font-size: 1.4rem; }
+    .program-place { font-size: 0.95rem; line-height: 1.5; max-width: 190px; }
+    .program-actions { margin-top: 18px; }
+    .program-action,
+    .moderator-contact { min-width: 100px; padding: 10px 12px; font-size: 0.84rem; }
+    .zoom-modal-card,
+    .moderator-modal-card { padding: 28px 22px 24px; }
+    .zoom-modal-title,
+    .moderator-modal-title { font-size: 1.75rem; }
+    .countdown-grid { gap: 2px; }
+    .rsvp-choice-group { grid-template-columns: 1fr; }
+    .mesaj {
+      margin: 8px 20px 0;
+      padding: 24px 20px;
+      font-size: 0.92rem;
+      line-height: 1.68;
+      border-radius: 16px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .story-section { grid-template-columns: 1fr; }
+    .program-list { gap: 24px; }
+    .program-item { padding-inline: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-script"><span class="hero-line">Marius</span><span class="hero-ampersand">&</span><span class="hero-line">Sultana</span></h1>
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <div class="hero-divider-diamond"></div>
+      <div class="hero-divider-line"></div>
+    </div>
+    <p class="hero-date">24 · 10 · 2026</p>
+  </div>
+  <div class="hero-scroll">scroll</div>
+</div>
+
+<div class="message-section reveal">
+  <span class="section-label">Dragii noștri</span>
+  <div class="section-line"><div class="section-diamond"></div></div>
+  <p>Cu inimile pline de emoție și recunoștință vă invităm să fiți alături de noi în una dintre cele mai importante zile din viața noastră!</p>
+  <div class="floral">❧ ✦ ❧</div>
+</div>
+
+<div class="story-section reveal">
+  <div class="story-photo">
+    <img src="assets/story-couple-original.jpg" alt="Marius și Sultana">
+  </div>
+  <div class="story-copy">
+    <p>Iubirea ne-a adus împreună, iar acum ne conduce spre cel mai sincer și frumos “DA”</p>
+    <p>O nouă etapă din viața noastră - ca soț și soție!</p>
+    <img src="assets/story-hands.png" alt="Ilustrație mâini" class="story-accent-image">
+  </div>
+</div>
+
+<div class="save-date-section reveal">
+  <span class="save-date-label">Salvați data</span>
+  <div class="save-date-value">24.10.2026</div>
+</div>
+
+<div class="countdown-section reveal">
+  <p class="countdown-label">Până la nuntă a mai rămas</p>
+  <div class="countdown-grid">
+    <div class="countdown-item">
+      <span class="countdown-num" id="cd-days">00</span>
+      <span class="countdown-unit">zile</span>
+    </div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-item">
+      <span class="countdown-num" id="cd-hours">00</span>
+      <span class="countdown-unit">ore</span>
+    </div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-item">
+      <span class="countdown-num" id="cd-mins">00</span>
+      <span class="countdown-unit">min</span>
+    </div>
+    <span class="countdown-sep">:</span>
+    <div class="countdown-item">
+      <span class="countdown-num" id="cd-secs">00</span>
+      <span class="countdown-unit">sec</span>
+    </div>
+  </div>
+</div>
+
+<div class="program-section">
+  <div class="reveal">
+    <span class="section-label" style="text-align:center;display:block;">Programul de nuntă</span>
+    <div class="section-line"><div class="section-diamond"></div></div>
+  </div>
+  <div class="program-list">
+    <div class="program-item program-item--civil">
+      <div class="program-visual">
+        <img src="assets/cuvantare.png" alt="Icon cuvântare">
+      </div>
+      <div class="program-content">
+        <div class="program-title">Cuvântare</div>
+        <div class="program-time">13:00</div>
+        <p class="program-place">Strada Ceucari 2/5,<br>Chișinău</p>
+      </div>
+      <div class="program-actions">
+        <a href="https://maps.app.goo.gl/f3JAmP9GmHQpKR8TA" target="_blank" class="program-action">Locația</a>
+        <button type="button" class="program-action" data-open-zoom-modal>Zoom</button>
+      </div>
+    </div>
+    <div class="program-item program-item--banquet">
+      <div class="program-visual">
+        <img src="assets/banchet-new.png" alt="Icon banchet">
+      </div>
+      <div class="program-content">
+        <div class="program-title">Banchet</div>
+        <div class="program-time">17:00</div>
+        <p class="program-place">Restaurantul „Poseidon”<br>Parcul Nistrean,<br>Vadul lui Vodă</p>
+      </div>
+      <div class="program-actions">
+        <a href="https://maps.app.goo.gl/R8MK9EdXiyPdQBVN9" target="_blank" class="program-action">Locația</a>
+      </div>
+    </div>
+    <div class="program-item program-item--moderator">
+      <div class="program-visual">
+        <img src="assets/moderator-icon.png" alt="Icon moderator">
+      </div>
+      <div class="program-content">
+        <div class="program-title">Moderator</div>
+        <p class="program-place">Pentru detalii suplimentare legate de organizarea serii îl puteți contacta și la</p>
+      </div>
+      <div class="program-actions">
+        <button type="button" class="moderator-contact" data-open-moderator-modal>Vezi datele de contact</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="zoom-modal" data-zoom-modal hidden>
+  <div class="zoom-modal-card" role="dialog" aria-modal="true" aria-labelledby="zoom-modal-title">
+    <button type="button" class="zoom-modal-close" data-close-zoom-modal aria-label="Închide">&times;</button>
+    <div class="zoom-modal-title" id="zoom-modal-title">Zoom</div>
+    <p class="zoom-modal-text">Participarea online este disponibilă la linkul de mai jos.</p>
+    <a href="https://jworg.zoom.us/j/4513630354?pwd=VU03bnh4ZUpmbS9scUtqWStibDVVdz09" target="_blank" rel="noreferrer" class="zoom-modal-link">Deschide Zoom</a>
+    <span class="zoom-modal-value">Parola: 101010</span>
+  </div>
+</div>
+
+<div class="moderator-modal" data-moderator-modal hidden>
+  <div class="moderator-modal-card" role="dialog" aria-modal="true" aria-labelledby="moderator-modal-title">
+    <button type="button" class="moderator-modal-close" data-close-moderator-modal aria-label="Închide">&times;</button>
+    <div class="moderator-modal-title" id="moderator-modal-title">Ion Mihailov</div>
+    <a href="tel:+37360391979" class="moderator-modal-phone">+373 60391979</a>
+  </div>
+</div>
+
+<div class="mesaj">P.S „Pentrucă ne dorim să păstrăm vie amintirea acestei zile cât mai mult timp, v-am fi recunoscători dacă ați înlocui florile cu o sticlă din vinul vostru preferat.”</div>
+
+<div class="rsvp-section reveal">
+  <span class="section-label">Confirmă prezența</span>
+  <div class="section-line"><div class="section-diamond"></div></div>
+  <p class="rsvp-deadline">Vă rugăm să ne transmiteți răspunsul vostru printr-un singur pas simplu.</p>
+
+  <form class="rsvp-form" data-rsvp-form novalidate>
+    <input type="hidden" name="_subject" value="Confirmare prezență - Marius & Sultana">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://marius-and-sultana.vercel.app/">
+    <input type="text" name="_honey" value="" style="display:none">
+    <div class="rsvp-field">
+      <label>Nume Prenume</label>
+      <input type="text" name="Nume Prenume" placeholder="Ion Popescu" data-rsvp-name autocomplete="name">
+    </div>
+    <div class="rsvp-field">
+      <label>Răspunsul tău</label>
+      <div class="rsvp-choice-group">
+        <button type="button" class="rsvp-choice" data-rsvp-choice="Accept">Accept</button>
+        <button type="button" class="rsvp-choice" data-rsvp-choice="Refuz">Refuz</button>
+      </div>
+    </div>
+    <input type="hidden" name="Răspuns" value="" data-rsvp-status>
+    <p class="rsvp-status-note" data-rsvp-note>Alege una dintre opțiuni pentru a confirma prezența.</p>
+    <button type="submit" class="rsvp-submit">Trimite confirmarea</button>
+  </form>
+</div>
+
+<footer class="footer">
+  <span class="footer-script">Vă așteptăm cu drag!</span>
+  <p class="footer-contact">Marius &amp; Sultana</p>
+</footer>
+
+<script>
+  const weddingDate = new Date('2026-10-24T14:00:00');
+
+  function updateCountdown() {
+    const now = new Date();
+    let diff = weddingDate - now;
+    if (diff < 0) diff = 0;
+
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('cd-days').textContent = String(d).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  const reveals = document.querySelectorAll('.reveal, .program-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), entry.target.classList.contains('program-item') ? index * 100 : 0);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  reveals.forEach((el) => observer.observe(el));
+
+  const moderatorModal = document.querySelector('[data-moderator-modal]');
+  const openModeratorModalButton = document.querySelector('[data-open-moderator-modal]');
+  const closeModeratorModalButton = document.querySelector('[data-close-moderator-modal]');
+  const zoomModal = document.querySelector('[data-zoom-modal]');
+  const openZoomModalButton = document.querySelector('[data-open-zoom-modal]');
+  const closeZoomModalButton = document.querySelector('[data-close-zoom-modal]');
+
+  function closeModeratorModal() {
+    moderatorModal.hidden = true;
+  }
+
+  function closeZoomModal() {
+    zoomModal.hidden = true;
+  }
+
+  if (openModeratorModalButton) {
+    openModeratorModalButton.addEventListener('click', () => {
+      moderatorModal.hidden = false;
+    });
+  }
+
+  if (closeModeratorModalButton) {
+    closeModeratorModalButton.addEventListener('click', closeModeratorModal);
+  }
+
+  if (moderatorModal) {
+    moderatorModal.addEventListener('click', (event) => {
+      if (event.target === moderatorModal) {
+        closeModeratorModal();
+      }
+    });
+  }
+
+  if (openZoomModalButton) {
+    openZoomModalButton.addEventListener('click', () => {
+      zoomModal.hidden = false;
+    });
+  }
+
+  if (closeZoomModalButton) {
+    closeZoomModalButton.addEventListener('click', closeZoomModal);
+  }
+
+  if (zoomModal) {
+    zoomModal.addEventListener('click', (event) => {
+      if (event.target === zoomModal) {
+        closeZoomModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && moderatorModal && !moderatorModal.hidden) {
+      closeModeratorModal();
+    }
+
+    if (event.key === 'Escape' && zoomModal && !zoomModal.hidden) {
+      closeZoomModal();
+    }
+  });
+
+  const rsvpForm = document.querySelector('[data-rsvp-form]');
+  const rsvpChoices = document.querySelectorAll('[data-rsvp-choice]');
+  const rsvpStatusField = document.querySelector('[data-rsvp-status]');
+  const rsvpNote = document.querySelector('[data-rsvp-note]');
+  const rsvpSubmitButton = rsvpForm ? rsvpForm.querySelector('.rsvp-submit') : null;
+  const rsvpHoneyField = rsvpForm ? rsvpForm.querySelector('input[name="_honey"]') : null;
+
+  rsvpChoices.forEach((choice) => {
+    choice.addEventListener('click', () => {
+      rsvpChoices.forEach((btn) => btn.classList.remove('active'));
+      choice.classList.add('active');
+      rsvpStatusField.value = choice.dataset.rsvpChoice;
+      rsvpNote.textContent = choice.dataset.rsvpChoice === 'Accept'
+        ? 'Ne bucurăm că veți fi alături de noi.'
+        : 'Vă mulțumim că ne-ați anunțat din timp.';
+    });
+  });
+
+  async function handleRSVP(event) {
+    event.preventDefault();
+    const nameField = document.querySelector('[data-rsvp-name]');
+    const btn = rsvpSubmitButton;
+
+    if (!nameField || !btn) {
+      return;
+    }
+
+    const guestName = nameField.value.trim();
+
+    if (!guestName) {
+      rsvpNote.textContent = 'Te rugăm să completezi numele și prenumele.';
+      return;
+    }
+
+    if (!rsvpStatusField.value) {
+      rsvpNote.textContent = 'Te rugăm să alegi Accept sau Refuz.';
+      return;
+    }
+
+    const originalText = btn.textContent;
+    btn.textContent = 'Se trimite...';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name: guestName,
+          status: rsvpStatusField.value,
+          honey: rsvpHoneyField ? rsvpHoneyField.value : ''
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Submit failed');
+      }
+
+      btn.textContent = rsvpStatusField.value === 'Accept' ? 'Confirmat cu drag' : 'Răspuns înregistrat';
+      btn.style.background = 'var(--mauve)';
+      nameField.disabled = true;
+      rsvpChoices.forEach((choice) => {
+        choice.disabled = true;
+        choice.style.pointerEvents = 'none';
+      });
+      rsvpNote.textContent = `${guestName} · ${rsvpStatusField.value} · trimis pe email`;
+    } catch (error) {
+      btn.textContent = originalText;
+      btn.disabled = false;
+      rsvpNote.textContent = 'A apărut o problemă la trimitere. Încearcă din nou.';
+    }
+  }
+
+  if (rsvpForm) {
+    rsvpForm.addEventListener('submit', handleRSVP);
+  }
+</script>
+</body>
+</html>
